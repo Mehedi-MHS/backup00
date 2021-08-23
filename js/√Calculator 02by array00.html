@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Calculator project 02||2nd calculator</title>
+<meta name="viewport"content="width=device-width, initial-scale=1">
+<meta charset="UTF-8" />
+<style type="text/css">
+*{box-sizing: border-box;}
+body{margin:0px;text-align: center;background-image:radial-gradient(cyan,black);background-repeat: no-repeat;background-size:100% 1000px;}
+.shape{margin-left:5px;padding:7px;border-radius: 7px;text-align: center;background-color:black;width:300px;border:2px outset grey;box-shadow :5px 5px 5px sir;box-sizing: border-box;}
+button{width:50px;height: 30px;font-size: 18px;border-radius: 5px;outline:none;}
+input#display{
+  outline:none;
+}
+</style>
+</head>
+<body>
+<br>
+<center>
+<div class="shape">
+   <input id="display"type="text"style="width:280px;height: 50px;background-color: lightGreen;color:green;font-size:25px;overflow-x:auto;text-shadow: 2px 2px 2px grey;box-sizing:border-box;"disabled maxlength="19"><br><br>
+   <center>
+   <table style="width:286px;">
+      <tr>
+         <td><button data="1"display="1"onclick="sum(this)">1</button></td>
+         <td><button data="2"display="2"onclick="sum(this)">2</button></td>
+         <td><button data="3"display="3"onclick="sum(this)">3</button></td>
+         <td><button data="("display="("onclick="sum(this)">(</button></td>
+         <td><button data=")"display=")"onclick="sum(this)">)</button></td>
+      </tr>
+      <tr>
+         <td><button data="4"display="4"onclick="sum(this)">4</button></td>
+         <td><button data="5"display="5"onclick="sum(this)">5</button></td>
+         <td><button data="6"display="6"onclick="sum(this)">6</button></td>
+         <td><button data="+"display="+"onclick="sum(this)">+</button></td>
+         <td><button data="-"display="-"onclick="sum(this)">-</button></td>
+      </tr>
+      <tr>
+         <td><button data="7"display="7"onclick="sum(this)">7</button></td>
+     	 <td><button data="8"display="8"onclick="sum(this)">8</button></td>
+   	     <td><button data="9"display="9"onclick="sum(this)">9</button></td>
+         <td><button data="*"display="×"onclick="sum(this)">×</button></td>
+      	 <td><button data="/"display="÷"onclick="sum(this)">÷</button></td>
+      </tr>
+      <tr>
+      	 <td><button data="Math.sin((Math.PI/180)*"display="sin("onclick="sum(this)">sin</button></td>
+      	 <td><button data="0"display="0"onclick="sum(this)">0</button></td>
+      	 <td><button data="Math.cos((Math.PI/180)*"display="cos("onclick="sum(this)">cos</button></td>
+       	 <td><button data="^2"display="²"onclick="sum(this)">x<sup><small>2</small></sup></button></td>
+      	 <td><button data="Math.tan((Math.PI/180)*"display="tan("onclick="sum(this)">tan</button></td>
+      </tr>
+      <tr>
+      	 <td><button data="."display="."onclick="sum(this)">.</button></td>
+         <td><button data="Math.sqrt("display="√("onclick="sum(this)">√</button></td>
+         <td><button onclick="clears()"style="background-color: red;color: white;">AC</button></td>
+         <td><button onclick="del()"style="background-color:tomato;color:white;">DEL</button></td>
+      	 <td ><button onclick="equal()">=</button></td>    	 
+      </tr>
+      <tr>
+         <td><button data="^("display="^("onclick="sum(this)">^</button></td>
+         <td><button data=" "display=" "onclick="sum(this)"> </button></td>
+         <td><button onclick=" "> </button></td>
+         <td><button onclick=" "> </button></td>
+         <td ><button onclick=" "> </button></td>    	 
+      </tr>
+  </table>
+</center>
+</div>
+</center>
+
+<script type="text/javascript">
+
+
+var last_inserted="";
+var data="";
+var show="";
+var Dataarr=[];
+var Showarr=[];
+var displays=document. getElementById("display");
+
+function sum(abc){
+
+data=abc.getAttribute("data");
+Dataarr.push(data);
+show=abc.getAttribute("display");
+Showarr.push(show);
+displays.value=Showarr.toString().split(",").join("");
+}
+
+
+function equal(){
+try{//error handler
+var digit=Dataarr.toString().split(",").join("");
+var modified=digit.replaceAll("^","**");
+var sum=eval(modified);
+displays.value=sum;
+data="";
+data=sum;
+Showarr=[];
+Showarr.push(sum);
+Dataarr=[];
+Dataarr.push(sum);
+show="";
+show=sum;
+}catch(mh){
+Dataarr=[];
+Showarr=[];
+displays.value="Error!";
+  }
+}
+
+function clears(){
+Dataarr=[];
+Showarr=[];
+data="";
+show="";
+displays.value="";
+}
+
+function del(){
+Dataarr.pop();
+Showarr.pop();
+displays.value=Showarr.toString().split(",").join("");
+}
+
+
+/*
+#Last modified:16 Jul 2021
+#Next mission:
+   i)re arrange the buttons
+   ii)re design the calculator as like the scientific calculator with name "casio" and the solar panel
+   iii)add log,ln,sin^(-1),cosec etc and other buttons with functionality
+#error:problem found in opera while using divide functionality
+*/
+</script>
+
+
+
+</body>
+</html>
