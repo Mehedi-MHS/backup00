@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+<meta name="viewport"content="width=device-width,initial-scale=1">
+<meta charset="UTF-8" />
+<style type="text/css">
+.box{
+  width:290px;
+  height:250px;
+  border-radius:7px;
+  background:skyblue;
+  position:relative;/*important*/
+  display:grid;
+  place-items:center;
+  color:steelBlue;
+  overflow:hidden;/*important*/
+}
+ .line:before{
+ position:absolute;
+ content:"";
+ left:0;
+ bottom:0;
+ background:darkblue;
+ height:2px;
+ width:0px;
+}
+.box:hover{
+  box-shadow:0px 0 30px rgba(1,41,112,0.2);
+}
+ .box:hover .line:before{
+ width:100%;
+ transition:1s;
+}
+</style>
+</head>
+<body>
+<h1>box hover border animation by me</h1>
+
+<div class="box">
+  <div class="line" >
+    <div class="text">
+       <h2>Hover over me</h2>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

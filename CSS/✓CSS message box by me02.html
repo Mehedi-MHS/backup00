@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+<meta name="viewport"content="width=device-width,initial-scale=1">
+<meta charset="utf-8" />
+<style type="text/css">
+/************Right arrow***********/
+.box1{
+  width:200px;
+  height:100px;
+  background-color:black;
+  position:relative;/*Most important*/
+  margin:auto auto;/*centering the box*/
+}
+.box1:before{
+  content:"";
+  position:absolute;/*Most important*/
+  border-right:none;
+  border-left:15px solid orange;
+  border-top:15px solid transparent;
+  border-bottom:15px solid transparent;
+  left:100%;
+  top:35%;
+}
+
+
+/************bottom arrow***********/
+.box2{
+  width:200px;
+  height:100px;
+  background-color:black;
+  position:relative;/*Most important*/
+  margin:auto auto;/*centering the box*/
+}
+.box2:before{
+  content:"";
+  position:absolute;/*Most important*/
+  border-bottom:none;
+  border-top:15px solid black;
+  border-right:15px solid transparent;
+  border-left:15px solid transparent;
+  top:100%;
+  left:45%;
+}
+
+/************left arrow***********/
+.box3{
+  width:200px;
+  height:100px;
+  background-color:black;
+  position:relative;/*Most important*/
+  margin:auto auto;/*centering the box*/
+}
+.box3:before{
+  content:"";
+  position:absolute;/*Most important*/
+  border-left:none;
+  border-right:15px solid black;
+  border-top:15px solid transparent;
+  border-bottom:15px solid transparent;
+  right:100%;
+  top:45%;
+}
+
+/************top arrow***********/
+.box4{
+  width:200px;
+  height:100px;
+  background-color:black;
+  position:relative;/*Most important*/
+  margin:auto auto;/*centering the box*/
+}
+.box4:before{
+  content:"";
+  position:absolute;/*Most important*/
+  border-top:none;
+  border-bottom:15px solid black;
+  border-left:15px solid transparent;
+  border-right:15px solid transparent;
+  bottom:100%;
+  left:45%;
+}
+
+
+
+
+
+
+</style>
+</head>
+<body>
+<h1>Message box by me.</h1><h2>Easiest way!</h2>
+
+<ul>
+<mark style="background-color:red;" ><strong>Important:</strong>Must use <strong>position:absolute;</strong> unless arrow will not drawn properly</mark>
+ <li><strong>For right arrow,<br>border-right:none;</strong>border-left:15px solid red ;border-top & border-bottom : 15px solid transparent;<strong>left:100%;top or bottom:45%;</strong><br><mark><strong>Note:</strong>3 borders px must be same</mark></li>
+ <li><strong>For bottom arrow,<br>border-bottom:none;</strong>border-top:15px solid red ;border-right & border-left: 15px solid transparent;<strong>top:100%;left or right:45%;</strong><br><mark><strong>Note:</strong>3 borders px must be same</mark></li>
+ <li><strong>For left arrow,<br>border-left:none;</strong>border-right:15px solid red ;border-top & border-bottom : 15px solid transparent;<strong>right:100%;top or bottom:45%;</strong><br><mark><strong>Note:</strong>3 borders px must be same</mark></li>
+ <li><strong>For top arrow,<br>border-top:none;</strong>border-bottom:15px solid red ;border-right & border-left : 15px solid transparent;<strong>bottom:100%;left or right:45%;</strong><br><mark><strong>Note:</strong>3 borders px must be same</mark></li>
+</ul>
+
+
+
+
+
+<div class="box1"></div>
+<br>
+<div class="box2" ></div>
+<br>
+<div class="box3"></div>
+<br>
+<div class="box4" ></div>
+
+
+</body>
+</html>

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Tooltip box</title>
+<meta name="viewport"content="width=device-width,initial-scale=1">
+<meta charset="utf-8" />
+<style type="text/css">
+.box{
+     width:250px;
+     height:100px;
+     position:relative;/*important*/
+     background-color:orange;
+     text-align:center;
+     padding:5px;
+     margin:50px auto auto auto;
+     }
+     
+     
+     /*Top arrow*/
+.box.arrow-top{
+      margin-top:15px;/*it is used to keep some space on the top of the box*/
+     }
+.box.arrow-top:after{
+    content: " ";
+    position:absolute;
+    top:-15px;/*same but opposite as border right,left,etc . ↓*/
+    right:120px;/*half of box width*/
+    border-top:none;/*for  top arrow*/
+    border-right:15px solid transparent;
+    border-left:15px solid transparent;
+    border-bottom:15px solid orange;
+    }
+    
+/*right arrow*/
+.box.arrow-right{
+      margin-right:15px;/*it is used to keep some space on the right of the box*/
+     }
+.box.arrow-right:after{
+    content: " ";
+    position:absolute;
+    right:-15px;/*same but opposite as border right,left,etc . ↓*/
+    top:50px;/*half of box height*/
+    border-top:15px solid transparent;
+    border-right:none;/*for right arrow*/
+    border-left:15px solid orange;
+    border-bottom:15px solid transparent;
+    }
+    
+
+/*bottom arrow*/
+.box.arrow-bottom{
+      margin-t:15px;/*it is used to keep some space on the bottom of the box*/
+     }
+.box.arrow-bottom:after{
+    content: " ";
+    position:absolute;
+    bottom:-15px;/*same but opposite as border right,left,etc . ↓*/
+    right:120px;
+    border-top:15px solid orange;
+    border-right:15px solid transparent;
+    border-left:15px solid transparent;
+    border-bottom:none;/*for bottom arrow*/
+    }
+
+
+/*left arrow*/
+.box.arrow-left{
+      margin-left:15px;/*it is used to keep some space on the left of the box*/
+     }
+.box.arrow-left:after{
+    content: " ";
+    position:absolute;
+    left:-15px;/*same but opposite as border right,left,etc . ↓*/
+    top:50px;/*half of box height*/
+    border-top:15px solid transparent;
+    border-right:15px solid orange;
+    border-left:none;/*for left arrow*/
+    border-bottom:15px solid transparent;
+    }
+
+</style>
+</head>
+<body>
+<ul style="background-color:rgba(0,123,55,0.5);padding-top:7px;padding-bottom:7px;">
+<h3>Note:</h3>
+<li>Target the <strong>“.box”</strong> selector and define the width, height background, etc. Here the important thing is <strong>position</strong> property that you need to keep <strong>relative</strong>. The other properties such as margin and padding can be defined according to your needs.</li>
+<li>After that, leave some space on the top of the box by defining the margin-top property. Then, use the CSS <strong>after pseudo selector .arrow-top:after keep its content blank</strong>, define its <strong>position as absolute</strong>, and set border property</li>
+</ul>
+<br>
+
+<div class="box arrow-top" >
+ Top arrow
+</div>
+<hr>
+
+<div class="box arrow-right" >
+ Right arrow
+</div>
+<hr>
+
+<div class="box arrow-bottom" >
+ Bottom arrow
+</div>
+<hr>
+
+<div class="box arrow-left" >
+ Left arrow
+</div>
+
+
+</body>
+</html>

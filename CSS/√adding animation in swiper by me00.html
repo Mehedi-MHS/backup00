@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Swiper example by me00</title>
+<meta name="viewport"content="width=device-width,initial-scale=1">
+<link rel="stylesheet" href="/storage/emulated/0/web assets/swiper/swiper-bundle.min.css">
+<link rel="stylesheet" href="/storage/emulated/0/web assets/aos/aos.css">
+<meta charset="utf-8" />
+<style type="text/css">
+.swiper-container{
+  width:300px;
+  height:300px;
+}
+.info{
+  width:250px;
+  height:230px;
+  text-align:center;
+  background-color:white;
+  color:black;
+  box-shadow:0px 0 20px rgba(1,41,112,0.2);
+  display:grid;
+  place-items:center;
+  margin:0px auto;
+  overflow:hidden;/*Add this to hide text outside of box while animating*/
+}
+
+.swiper-slide-active .fade-up-fast{ /*must add .swiper-slide-active . it selects the active slide*/
+  animation:mh 1s ease-out;
+  animation-fill-mode:both;
+  animation-delay:0.4s;
+}
+@keyframes mh {0%{opacity:0;transform:translate3d(0,-200px,0);}to{opacity:1;transform:none;}}
+
+
+.swiper-slide-active .fade-up-slow{
+  animation:mh 1s ease-out;
+  animation-delay:0.9s;
+  animation-fill-mode:both
+}
+
+
+</style>
+</head>
+<body>
+
+<h1>Adding aos like animation in every slide of swiper by me00</h1>
+
+
+<div class="swiper-container">
+   <div class="swiper-wrapper ">
+      <div class="swiper-slide">
+          <div class="info">
+              <h1 class="fade-up-fast">Slide1</h1>
+              <progress class="fade-up-slow"></progress>
+           </div>
+      </div>
+      <div class="swiper-slide">
+         <div class="info">
+            <h1 class="fade-up-fast">Slide2</h1>
+            <progress class="fade-up-slow"></progress>
+         </div>
+      </div>
+      <div class="swiper-slide">
+         <div class="info">
+            <h1 class="fade-up-fast" >Slide3</h1>
+            <progress class="fade-up-slow" ></progress>
+         </div>
+      </div>
+   </div>
+   <div class="swiper-pagination"></div>
+</div>
+
+
+
+
+<script src="/storage/emulated/0/web assets/swiper/swiper-bundle.min.js"></script>
+
+<script type="text/javascript">/*Must place this script after declaring ↑ swiper.js file*/
+const swiper=new Swiper('.swiper-container',{
+      direction:'horizontal',
+      loop:true,
+      autoplay:{
+         delay:3000,
+         disableOnInteraction:false
+      },
+      pagination:{
+        el:'.swiper-pagination',
+        type:'bullets'
+      },
+   
+      }); 
+      </script>
+      
+
+</script>
+</body>
+</html>
+

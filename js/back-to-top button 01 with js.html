@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+<meta name="viewport"content="width=device-width,initial-scale=1">
+<meta charset="utf-8" />
+<link rel="stylesheet" href="/storage/emulated/0/web assets/css/font-awesome.css" >
+<link rel="stylesheet" href="/storage/emulated/0/web assets/css/bootstrap.min.css">
+<style type="text/css">
+.txt{width:100%;
+     height:500px;
+     text-align:center;
+     border-radius:3px;
+     margin-bottom:15px;
+}
+.txt:nth-child(even){background-color:steelBlue;border-bottom:3px solid magenta;color:orange;}
+.txt:nth-child(odd){background-color:silver;border-bottom:3px solid blue;color:green}
+
+/*Starting main css*/
+.back-to-top{position:fixed;
+             right:15px;
+             bottom:15px;
+             visibility:hidden;
+             opacity:0;
+             width:30px;
+             height:30px;
+             border-radius:5px;
+             text-decoration:none;/*for removing underline*/
+             background-color:purple;
+             text-align:center;
+             transition:all 0.4s;/*most impirtant*/
+             z-index:9999;
+}
+
+.back-to-top span{color:white;
+}
+.active{visibility:visible;
+        opacity:1;
+}
+
+
+
+
+</style>
+</head>
+<body>
+
+<div class="txt">
+   <h1>back-to-top button01<span class="fa fa-home" ></span></h1><hr>
+   <p>Top navigation back-to-top button with transition.</p>
+   <p class="alert alert-info"><strong>Note:</strong>For back-to-top scrolling, <br><mark>transition:all 0.4s;</mark> is most important</p>
+   <p>Just scroll down and see the effect!</p>
+</div>
+
+<div class="txt">
+   <h1>back-to-top button</h1><hr>
+   <p>Top navigation back-to-top button with transition.</p>
+</div>
+
+<div class="txt">
+   <h1>back-to-top button</h1><hr>
+   <p>Top navigation back-to-top button with transition.</p>
+</div>
+
+<div class="txt">
+   <h1>back-to-top button</h1><hr>
+   <p>Top navigation back-to-top button with transition.</p>
+</div>
+
+<div class="txt">
+   <h1>back-to-top button</h1><hr>
+   <p>Top navigation back-to-top button with transition.</p>
+</div>
+
+<!--Starting main HTML-->
+
+<a href="#"  id="mh"class="back-to-top d-flex align-items-center justify-content-center"><!--Here d-flex means display:flex; And align-items-center,justify-content-center is used to center the chevron-up icon-->
+   <span class="fa fa-chevron-up"></span>
+</a>
+
+
+<script type="text/javascript">
+var backtotop=document.querySelector(".back-to-top");
+function mh(){
+if(window.scrollY>100){
+   backtotop.classList.add('active');
+}else{backtotop.classList.remove('active');}
+ }
+
+window.addEventListener("load",mh);
+window.addEventListener("scroll",mh);
+</script>
+
+<script type="/storage/emulated/0/web assets/js/bootstrap.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+<meta name="viewport"content="width=device-width,initial-scale=1">
+<meta charset="UTF-8" />
+<style type="text/css">
+.box{
+  max-width:100%;
+  height:300px;
+  background:url('/storage/emulated/0/web assets/img/blog-2.jpg') no-repeat;
+  background-size:cover;
+}
+
+.box .bg-color{
+  width:100%;
+  height:100%;
+  background:rgba(25,87,255,0.6);/*got color value in w3school apps color picker*/
+  display:grid;/*centering button*/
+  place-items:center;
+  opacity:0;
+  transition:opacity 0.4s;
+}
+
+.box .bg-color button{
+  border-radius:5px;
+  padding:9px 19px;
+  border:1px solid darkblue;
+  font-size:1.05em;
+  font-weight:350;
+  color:steelBlue;
+  background:#fff;/*white*/
+  transition:all 0.4s;
+}
+
+.box .bg-color button:hover{
+  box-shadow:0px 1px 5px black;
+  transform:scale(1.1);
+}
+
+.box:hover .bg-color{
+  opacity:1;
+}
+</style>
+</head>
+<body>
+
+<h3>Hover effect by me</h3>
+<p>Hover over or click the image to see the effect</p>
+
+<div class="box">
+   <div class="bg-color">
+      <button>View &raquo;</button>
+   </div>
+</div>
+
+
+
+</body>
+</html>

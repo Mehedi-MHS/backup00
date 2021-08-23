@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+<meta name="viewport"content="width=device-width,initial-scale=1">
+<meta charset="utf-8" />
+<style type="text/css">
+.box{
+ width:100px;
+ height:50px;
+ background-color:green;
+ position:relative;/*Most important*/
+ margin:50px;
+}
+/* :before and :after is used to insert something in the same parent*/
+.box:before{
+ content:"";
+ position:absolute;/*Most important*/
+ border-top:none;
+ border-right:15px solid transparent;
+ border-left:15px solid transparent;
+ border-bottom:15px solid green;
+ bottom:50px;
+ left:40%;
+}
+</style>
+</head>
+<body>
+<h4>Position relative and absolute is very important . Otherwise arrow will not be drawn properly</h4>
+
+<div class="box" ></div>
+
+
+<p><strong>:before</strong> and <strong>:after</strong> is used to insert something in the same parent.
+</p>
+
+<br><p>Please check <a href="✓CSS message box by me02.html" >✓CSS message box by me02.html</a></p>
+
+</body>
+</html>

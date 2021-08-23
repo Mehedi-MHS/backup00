@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>  </title>
+<meta name="viewport"content="width=device-width,initial-scale=1">
+<meta charset="UTF-8" />
+<style type="text/css">
+.box{
+  max-width:80%;
+  height:200px;
+  margin:10px auto;
+  background:steelBlue;
+  display:grid;
+  place-items:center;
+  overflow:hidden;
+}
+.box h3{
+  font-weight:959;
+}
+
+.fade-down{animation:mh 2.95s ease-out infinite;animation-delay:2.95s;animation-fill-mode:both;}@keyframes mh{0%{opacity:0;transform:translate3d(0,-200px,0);}to{opacity:1;transform:none;}}
+
+
+
+
+</style>
+</head>
+<body>
+<h1>By me</h1><h2>SetInterval,animation-duration and animation-delay must be same(nearest number)</h2>
+<div class="box">
+   <h2 id="text"class="fade-down"></h2>
+</div>
+
+<script type="text/javascript">
+var txt=document.querySelector("#text");
+var arr=["Bye bye","Good morning","Good night"];
+var length=arr.length-1;
+var num=0;
+setInterval(function(){
+    num++;
+    if(num>=length){
+        num-=length;
+    }
+    txt.textContent=arr[num];
+    txt.style.transition="0.4s";
+    
+},3000);
+
+
+
+</script>
+
+</body>
+</html>

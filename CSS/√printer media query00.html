@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+<meta name="viewport"content="width=device-width,initial-scale=1">
+<meta charset="UTF-8" />
+<style type="text/css">
+header{
+  width:100%;
+  height:70px;
+  display:block;
+  text-align:center;
+  background:magenta;
+  color:white;
+  position:fixed;
+}
+
+
+@media print {
+ header,#print-button{
+   display:none;
+ }
+}
+
+
+</style>
+</head>
+<body>
+
+<header>I am fixed . i will not be printed</header>
+
+<article class="printme">
+   <h1>I will be printed</h1>
+   <p>Lorem ipsum dolor sit amet. Bangladesh is a beautiful country. Hello hi bue bye.</p>
+   <p>Lorem ipsum dolor sit amet. Bangladesh is a beautiful country. Hello hi bue bye.</p>
+   <p>Lorem ipsum dolor sit amet. Bangladesh is a beautiful country. Hello hi bue bye.</p>
+   <p>Lorem ipsum dolor sit amet. Bangladesh is a beautiful country. Hello hi bue bye.</p>
+   <p>Lorem ipsum dolor sit amet. Bangladesh is a beautiful country. Hello hi bue bye.</p>
+   <strong>Hide the elements that you dont want to print</strong>
+   <pre>
+   @media print{
+    ....code here....
+   }
+   </pre>
+   
+   <pre>
+   <strong>Example:</strong>
+   @media print{
+   header,#print-button{
+     display:none;
+     }
+   }
+   </pre>
+   </article>
+
+<button id="print-button" onclick="window.print()">Print</button>
+
+
+</body>
+</html>

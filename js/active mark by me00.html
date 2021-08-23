@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+<meta name="viewport"content="width=device-width,initial-scale=1">
+<meta charset="UTF-8" />
+<style type="text/css">
+nav a{
+  padding:3px;
+  display:inline-block;
+  font-weight:500;
+  margin-left:10%;
+}
+.active{
+  border-bottom:3px solid blue;
+}
+</style>
+</head>
+<body>
+<h1>Adding active status by me</h1>
+<p>Every element must have a common id or class to select everyone</p>
+<strong>Algorithm:</strong><p>First select all items. Then add click events to all items by forEach() function.After clicking,select all elements(containing the specific id/class) again
+.loop between all the elements by forEach() to remove the .active attribute from all of them. Add .active class to the clicked element.</p>
+  <hr>
+<nav >
+  <a class="active item">All</a>
+  <a class="item"   >Indoor</a>
+  <a class="item"  >Outdoor</a>
+</nav>
+
+<script type="text/javascript">
+var items=document.querySelectorAll(".item");
+items.forEach(function(one){ //selecting all elements
+  one.addEventListener("click",function(){ //adding click event to each element
+       items.forEach(function(el){ //after clicking, selecting all items again 
+       el.classList.remove("active"); //and removing .active class
+     });
+    this.classList.add("active"); //adding .active class to the clicked element
+  });
+
+});
+</script>
+
+
+</body>
+</html>

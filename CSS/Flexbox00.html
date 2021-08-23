@@ -1,0 +1,757 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+<meta name="viewport"content="width=device-width,initial-scale=1">
+<meta charset="utf-8" />
+<style type="text/css">
+/*extra*/
+*{box-sizing:border-box;}
+.info{width:90%;margin:auto auto;padding:7px;border-radius:3px;background-color:rgba(3,255,33,0.3);color:darkblue;border:1px solid blue;box-shadow:0px 0px 3px black;}
+h3{text-align:center;color:silver;}
+/*main*/
+.flex-item-container1{
+   display:-webkit-flex;
+   display:flex;
+   width:100%;
+   height:200px;
+   background-color:skyblue;
+}
+/***********/
+.flex-item1{
+   width:100px;
+   height:70px;
+   color:white;
+   background-color:green;
+   margin:10px;
+}
+.flex-item0{
+   width:100px;
+  /*removed height*/
+  color:white;
+   background-color:green;
+   margin:10px;
+}
+.flex-item2{
+   width:50px;
+   height:50px;
+   color:white;
+   background-color:blue;
+   margin:10px;
+}
+
+/***********/
+.flex-item-container2{
+   display:-webkit-flex;
+   display:flex;
+   -webkit-flex-direction:row-reverse;
+   flex-direction:row-reverse;
+   width:100%;
+   height:200px;
+   background-color:skyblue;
+}
+
+.flex-item-container3{
+   display:-webkit-flex;
+   display:flex;
+   -webkit-flex-direction:column;
+   flex-direction:column;
+   width:100%;
+   height:200px;
+   background-color:skyblue;
+}
+
+
+
+.flex-item-container4{
+   display:-webkit-flex;
+   display:flex;
+   -webkit-flex-direction:column-reverse;
+   flex-direction:column-reverse;
+   width:100%;
+   height:200px;
+   background-color:skyblue;
+}
+
+/***********/
+
+.flex-item-container5{
+   display:-webkit-flex;
+   display:flex;
+   -webkit-justify-content:flex-start;
+   justify-content:flex-start;
+   width:100%;
+   height:200px;
+   background-color:skyblue;
+}
+
+
+.flex-item-container6{
+   display:-webkit-flex;
+   display:flex;
+   -webkit-justify-content:flex-end;
+   justify-content:flex-end;
+   width:100%;
+   height:200px;
+   background-color:skyblue;
+}
+
+
+.flex-item-container7{
+   display:-webkit-flex;
+   display:flex;
+   -webkit-justify-content:center;
+   justify-content:center;
+   width:100%;
+   height:200px;
+   background-color:skyblue;
+}
+
+
+.flex-item-container8{
+   display:-webkit-flex;
+   display:flex;
+   -webkit-justify-content:space-between;
+   justify-content:space-between;
+   width:100%;
+   height:200px;
+   background-color:skyblue;
+}
+
+.flex-item-container9{
+   display:-webkit-flex;
+   display:flex;
+   -webkit-justify-content:space-around;
+   justify-content:space-around;
+   width:100%;
+   height:200px;
+   background-color:skyblue;
+}
+
+/***********/
+.flex-item-container10{
+   display:-webkit-flex;
+   display:flex;
+   -webkit-align-items:stretch;
+   align-items:stretch;
+   width:100%;
+   height:200px;
+   background-color:skyblue;
+}
+
+.flex-item-container11{
+   display:-webkit-flex;
+   display:flex;
+   -webkit-align-items:flex-start;
+   align-items:flex-start;
+   width:100%;
+   height:200px;
+   background-color:skyblue;
+}
+
+.flex-item-container12{
+   display:-webkit-flex;
+   display:flex;
+   -webkit-align-items:flex-end;
+   align-items:flex-end;
+   width:100%;
+   height:200px;
+   background-color:skyblue;
+}
+
+.flex-item-container13{
+   display:-webkit-flex;
+   display:flex;
+   -webkit-align-items:center;
+   align-items:center;
+   width:100%;
+   height:200px;
+   background-color:skyblue;
+}
+
+.flex-item-container14{
+   display:-webkit-flex;
+   display:flex;
+   -webkit-align-items:baseline;
+   align-items:baseline;
+   width:100%;
+   height:200px;
+   background-color:skyblue;
+}
+/********************/
+.flex-item-container15{
+   display:-webkit-flex;
+   display:flex;
+   -webkit-flex-wrap:nowrap;
+   flex-wrap:nowrap;
+   width:100%;
+   height:200px;
+   background-color:skyblue;
+}
+
+.flex-item-container16{
+   display:-webkit-flex;
+   display:flex;
+   -webkit-flex-wrap:wrap;
+   flex-wrap:wrap;
+   width:100%;
+   height:200px;
+   background-color:skyblue;
+}
+
+.flex-item-container17{
+   display:-webkit-flex;
+   display:flex;
+   -webkit-flex-wrap:wrap-reverse;
+   flex-wrap:wrap-reverse;
+   width:100%;
+   height:200px;
+   background-color:skyblue;
+}
+
+/**************  *  ****************/
+.flex-item-container18{
+   display:-webkit-flex;
+   display:flex;
+   -webkit-flex-wrap:wrap;
+   flex-wrap:wrap;
+   -webkit-align-content:center;
+   align-content:center;
+   width:100%;
+   height:250px;
+   background-color:skyblue;
+}
+
+.flex-item-container19{
+   display:-webkit-flex;
+   display:flex;
+   -webkit-flex-wrap:wrap;
+   flex-wrap:wrap;
+   -webkit-align-content:stretch;
+   align-content:stretch;
+   width:100%;
+   height:250px;
+   background-color:skyblue;
+}
+
+.flex-item-container20{
+   display:-webkit-flex;
+   display:flex;
+   -webkit-flex-wrap:wrap;
+   flex-wrap:wrap;
+   -webkit-align-content:flex-start;
+   align-content:flex-start;
+   width:100%;
+   height:250px;
+   background-color:skyblue;
+}
+
+.flex-item-container21{
+   display:-webkit-flex;
+   display:flex;
+   -webkit-flex-wrap:wrap;
+   flex-wrap:wrap;
+   -webkit-align-content:flex-end;
+   align-content:flex-end;
+   width:100%;
+   height:250px;
+   background-color:skyblue;
+}
+
+.flex-item-container22{
+   display:-webkit-flex;
+   display:flex;
+   -webkit-flex-wrap:wrap;
+   flex-wrap:wrap;
+   -webkit-align-content:space-between;
+   align-content:space-between;
+   width:100%;
+   height:250px;
+   background-color:skyblue;
+}
+
+.flex-item-container23{
+   display:-webkit-flex;
+   display:flex;
+   -webkit-flex-wrap:wrap;
+   flex-wrap:wrap;
+   -webkit-align-content:space-around;
+   align-content:space-around;
+   width:100%;
+   height:250px;
+   background-color:skyblue;
+}
+
+</style>
+</head>
+<body>
+<h1 align="center">Flexbox</h1><hr>
+<h3>display:flex;<br>display:-webkit-flex;</h3>
+<p>flex-item1 automatically sets width.Here box1,2,3,4 width is 100px. But showing as like 30 px.The flex-item1 items automatically changes their width. </p>
+
+<h4>Example0</h4><p>Items width:100px;height:70px;</p>
+<div class="flex-item-container1" >
+   <div class="flex-item1" >box1</div>
+   <div class="flex-item1" >box2</div>
+   <div class="flex-item1" >box3</div>
+   <div class="flex-item1" >box4</div>
+</div>
+<br>
+
+<h4>Example1</h4><p>Items width:100px; height is not used here.<strong>If height is not specified,items will be fit to container.</strong> </p>
+<div class="flex-item-container1" >
+   <div class="flex-item0" >box1</div>
+   <div class="flex-item0" >box2</div>
+   <div class="flex-item0" >box3</div>
+   <div class="flex-item0" >box4</div>
+</div>
+<br>
+
+<h4>Example2</h4>
+<div class="flex-item-container1" >
+   <div class="flex-item1" >box1</div>
+   <div class="flex-item1" >box2</div>
+   
+</div>
+<br>
+<div class="info" >
+    Boxes width (box1,box2...) of example1 and example2 are same.Here just shown how flex-item1 adopt their width.<br><br>Rotate the screen to understand properly.
+</div>
+<hr>
+
+
+
+
+<h3>-webkit-flex-direction:row-reverse;<br>flex-direction:row-reverse;<br>(row-reverse,column,column-reverse)</h3>
+<p>Flex default direction is ltr(left to right). flex-direction:row-reverse; will reverse the direction( here will be rtl-right to left)</p>
+<h4>Example3:row-reverse</h4>
+<div class="flex-item-container2" >
+   <div class="flex-item1" >box1</div>
+   <div class="flex-item1" >box2</div>
+   <div class="flex-item1" >box3</div>
+   <div class="flex-item1" >box4</div>
+</div>
+<br>
+
+<h4>Example4:column</h4>
+<div class="flex-item-container3" >
+   <div class="flex-item1" >box1</div>
+   <div class="flex-item1" >box2</div>
+   <div class="flex-item1" >box3</div>
+   <div class="flex-item1" >box4</div>
+</div>
+<br>
+
+
+<h4>Example5:column-reverse</h4>
+<div class="flex-item-container4" >
+   <div class="flex-item1" >box1</div>
+   <div class="flex-item1" >box2</div>
+   <div class="flex-item1" >box3</div>
+   <div class="flex-item1" >box4</div>
+</div>
+<br>
+<hr>
+
+
+
+
+<h3>-webkit-justify-content:flex-start;<br>justify-content:flex-start;<br>(flex-start,flex-end,center,space-between,space-around</h3>
+<p>The justify-content property horizontally aligns the flexible container's items when the items do not use all available space on the main-axis.</p>
+
+<p>The possible values are as follows:<br>
+
+flex-start - Default value. Items are positioned at the beginning of the container
+<br>flex-end - Items are positioned at the end of the container
+<br>center - Items are positioned at the center of the container
+<br>space-between - Items are positioned with space between the lines
+<br>space-around - Items are positioned with space before, between, and after the lines
+</p>
+
+<h4>Example6:flex-start</h4>
+<div class="flex-item-container5" >
+   <div class="flex-item1" >box1</div>
+   <div class="flex-item1" >box2</div>
+</div>
+<br>
+
+<h4>Example7:flex-end</h4>
+<div class="flex-item-container6" >
+   <div class="flex-item1" >box1</div>
+   <div class="flex-item1" >box2</div>
+</div>
+<br>
+
+<h4>Example8:center</h4>
+<div class="flex-item-container7" >
+   <div class="flex-item1" >box1</div>
+   <div class="flex-item1" >box2</div>
+</div>
+<br>
+
+<h4>Example9:space-between1</h4>
+<div class="flex-item-container8" >
+   <div class="flex-item2" >box1</div>
+   <div class="flex-item2" >box2</div>
+   <div class="flex-item2" >box3</div>
+   <div class="flex-item2" >box4</div>
+</div>
+<br>
+
+
+<h4>Example9:space-between2</h4>
+<div class="flex-item-container8" >
+   <div class="flex-item2" >box1</div>
+   <div class="flex-item2" >box2</div>
+</div>
+<br>
+
+<h4>Example10:space-around1</h4>
+<div class="flex-item-container9" >
+   <div class="flex-item2" >box1</div>
+   <div class="flex-item2" >box2</div>
+   <div class="flex-item2" >box3</div>
+   <div class="flex-item2" >box4</div>
+</div>
+<br>
+
+<h4>Example11:space-around2</h4>
+<div class="flex-item-container9" >
+   <div class="flex-item2" >box1</div>
+   <div class="flex-item2" >box2</div>
+</div>
+<br>
+
+<hr>
+
+
+
+
+<h3>-webkit-align-items:stretch;<br>align-items:stretch;<br>(stretch,flex-start,flex-end,center,baseline)</h3>
+<p>The align-items property vertically aligns the flexible container's items when the items do not use all available space on the cross-axis.
+
+The possible values are as follows:
+</p>
+<code>
+stretch - Default value. Items are stretched to fit the container
+<br>flex-start - Items are positioned at the top of the container
+<br>flex-end - Items are positioned at the bottom of the container
+<br>center - Items are positioned at the center of the container (vertically)
+<br>baseline - Items are positioned at the baseline of the container
+</code>
+
+<h4>Example12:stretch</h4><p>boxes automatically reduces/increases width to fit to the container width.Rotate the screen to see the effect.</p>
+<div class="flex-item-container10" >
+   <div class="flex-item1" >box1</div>
+   <div class="flex-item1" >box2</div>
+   <div class="flex-item1" >box3</div>
+   <div class="flex-item1" >box4</div>
+</div>
+<br>
+
+<h4>Example13 :flex-start</h4>
+<div class="flex-item-container11" >
+   <div class="flex-item1" >box1</div>
+   <div class="flex-item1" >box2</div>
+   <div class="flex-item1" >box3</div>
+   <div class="flex-item1" >box4</div>
+</div>
+<br>
+
+<h4>Example14 :flex-end</h4>
+<div class="flex-item-container12" >
+   <div class="flex-item1" >box1</div>
+   <div class="flex-item1" >box2</div>
+   <div class="flex-item1" >box3</div>
+   <div class="flex-item1" >box4</div>
+</div>
+<br>
+
+<h4>Example15 :center</h4>
+<div class="flex-item-container13" >
+   <div class="flex-item1" >box1</div>
+   <div class="flex-item1" >box2</div>
+   <div class="flex-item1" >box3</div>
+   <div class="flex-item1" >box4</div>
+</div>
+<br>
+
+<h4>Example16 :baseline</h4>
+<div class="flex-item-container14" >
+   <div class="flex-item1" >box1</div>
+   <div class="flex-item1" >box2</div>
+   <div class="flex-item1" >box3</div>
+   <div class="flex-item1" >box4</div>
+</div>
+<br>
+
+
+<hr>
+<h2>The flex-wrap Property</h2>
+<h3>-webkit-flex-wrap:nowrap;<br>flex-wrap:nowrap;<br>(nowrap,wrap,wrap-reverse)</h3>
+<p>The flex-wrap property specifies whether the flex items should wrap or not, if there is not enough room for them on one flex line.<br>
+
+The possible values are as follows:<br>
+<code>
+nowrap - Default value. The flexible items will not wrap<br>
+wrap - The flexible items will wrap if necessary<br>
+wrap-reverse - The flexible items will wrap, if necessary, in reverse order<br>
+</code>
+
+<h4>Example17 :nowrap</h4>
+<div class="flex-item-container15" >
+   <div class="flex-item1" >box1</div>
+   <div class="flex-item1" >box2</div>
+   <div class="flex-item1" >box3</div>
+   <div class="flex-item1" >box4</div>
+</div>
+<br>
+
+<h4>Example18 :wrap</h4>
+<div class="flex-item-container16" >
+   <div class="flex-item1" >box1</div>
+   <div class="flex-item1" >box2</div>
+   <div class="flex-item1" >box3</div>
+   <div class="flex-item1" >box4</div>
+</div>
+<br>
+
+<h4>Example19 :wrap-reverse</h4>
+<div class="flex-item-container17" >
+   <div class="flex-item1" >box1</div>
+   <div class="flex-item1" >box2</div>
+   <div class="flex-item1" >box3</div>
+   <div class="flex-item1" >box4</div>
+</div>
+<br>
+
+
+
+<hr>
+<h2>The align-content Property</h2>
+<h3>-webkit-align-content:center;<br>align-content:center;<br>(stretch,flex-start,flex-end,center,space-between,space-around)</h3>
+
+<p>The align-content property modifies the behavior of the flex-wrap property. It is similar to align-items, but instead of aligning flex items, it aligns flex lines.<br>
+The possible values are as follows:</p>
+<br>
+<mark><strong>My idea:</strong><i>align-items</i> property aligns single items. But <i>align-content</i> aligns the full content under a flexbox container</mark><br>
+<code>
+<br>stretch - Default value. Lines stretch to take up the remaining space
+<br>flex-start - Lines are packed toward the start of the flex container
+<br>flex-end - Lines are packed toward the end of the flex container
+<br>center - Lines are packed toward the center of the flex container
+<br>space-between - Lines are evenly distributed in the flex container
+<br>space-around - Lines are evenly distributed in the flex container, with half-size spaces on either end
+</code>
+<br>
+
+<h4>Example20 :center</h4>
+<div class="flex-item-container18" >
+   <div class="flex-item1" >box1</div>
+   <div class="flex-item1" >box2</div>
+   <div class="flex-item1" >box3</div>
+   <div class="flex-item1" >box4</div>
+</div>
+<br>
+
+<h4>Example21 :stretch</h4>
+<div class="flex-item-container19" >
+   <div class="flex-item1" >box1</div>
+   <div class="flex-item1" >box2</div>
+   <div class="flex-item1" >box3</div>
+   <div class="flex-item1" >box4</div>
+</div>
+<br>
+
+<h4>Example22 :flex-start</h4>
+<div class="flex-item-container20" >
+   <div class="flex-item1" >box1</div>
+   <div class="flex-item1" >box2</div>
+   <div class="flex-item1" >box3</div>
+   <div class="flex-item1" >box4</div>
+</div>
+<br>
+
+<h4>Example23 :flex-end</h4>
+<div class="flex-item-container21" >
+   <div class="flex-item1" >box1</div>
+   <div class="flex-item1" >box2</div>
+   <div class="flex-item1" >box3</div>
+   <div class="flex-item1" >box4</div>
+</div>
+<br>
+
+
+<h4>Example24 :space-between</h4>
+<div class="flex-item-container22" >
+   <div class="flex-item1" >box1</div>
+   <div class="flex-item1" >box2</div>
+   <div class="flex-item1" >box3</div>
+   <div class="flex-item1" >box4</div>
+</div>
+<br>
+
+
+<h4>Example25 :space-around</h4>
+<div class="flex-item-container23" >
+   <div class="flex-item1" >box1</div>
+   <div class="flex-item1" >box2</div>
+   <div class="flex-item1" >box3</div>
+   <div class="flex-item1" >box4</div>
+</div>
+<br>
+
+
+
+
+
+
+<hr>
+<h2>Flex Item Properties</h2>
+<li><strong>Ordering</strong></li>
+<h3>-webkit-order:-1;<br>order:-1;<br>(-number,+number)</h3>
+<p>The order property specifies the order of a flexible item relative to the rest of the flexible items inside the same container:(Here inline CSS applied)</p>
+
+<h4>Example26 (i):  order:-1;</h4><p>In this example, flex items serial is box1,box2,box3,box4. In box2,order:-1; applied and so box2 is transfared to first place</p>
+<div class="flex-item-container1" >
+   <div class="flex-item1" >box1</div>
+   <div class="flex-item1" style="-webkit-order:-1;order:-1;" >box2(ordered)</div>
+   <div class="flex-item1" >box3</div>
+   <div class="flex-item1" >box4</div>
+</div>
+<br>
+
+<h4>Example26 (ii):  order:2;</h4><p>In this example, flex items serial is box1,box2,box3,box4. In box2,order:2; applied and so box2 is transfared to last place</p>
+<div class="flex-item-container1" >
+   <div class="flex-item1" >box1</div>
+   <div class="flex-item1" style="-webkit-order:2;order:2;" >box2(ordered)</div>
+   <div class="flex-item1" >box3</div>
+   <div class="flex-item1" >box4</div>
+</div>
+<br>
+<br>
+
+<li><strong>Margin</strong></li>
+<h3>margin:auto;<br>(margin:auto;margin-right:auto;margin-left:auto;margin-top:auto;margin-bottom:auto;</h3>
+<p>Setting margin: auto; will absorb extra space. It can be used to push flex items into different positions.</p>
+<p>In the following example we set <strong>margin-right: auto;</strong> on the first flex item. This will cause all the extra space to be absorbed to the right of that element:(Here inline CSS used)</p>
+
+<h4>Example27(i): margin-right:auto</h4>
+<div class="flex-item-container1" >
+   <div class="flex-item2" style="margin-right:auto;" >box1√</div>
+   <div class="flex-item2"  >box2</div>
+   <div class="flex-item2" >box3</div> 
+</div>
+<br>
+
+<h4>Example27(ii): margin-right:auto</h4>
+<div class="flex-item-container1" >
+   <div class="flex-item1" style="margin-right:auto;" >box1√</div>
+   <div class="flex-item1"  >box2</div>
+   <div class="flex-item1" >box3</div> 
+</div>
+<br>
+
+<h4>Example27(iii): margin-left:auto</h4>
+<div class="flex-item-container1" >
+   <div class="flex-item2" style="margin-left:auto;" >box1√</div>
+   <div class="flex-item2"  >box2</div>
+   <div class="flex-item2" >box3</div> 
+</div>
+<br>
+
+<h4>Example27(iv): margin-left:auto</h4>
+<div class="flex-item-container1" >
+   <div class="flex-item1" style="margin-left:auto;" >box1√</div>
+   <div class="flex-item1"  >box2</div>
+   <div class="flex-item1" >box3</div> 
+</div>
+<br>
+
+<h4>Example27(v): margin-top:auto</h4>
+<div class="flex-item-container1" >
+   <div class="flex-item2" style="margin-top:auto;" >box1√</div>
+   <div class="flex-item2"  >box2</div>
+   <div class="flex-item2" >box3</div> 
+</div>
+<br>
+
+<h4>Example27(vi): margin-top:auto</h4>
+<div class="flex-item-container1" >
+   <div class="flex-item1" style="margin-top:auto;" >box1√</div>
+   <div class="flex-item1"  >box2</div>
+   <div class="flex-item1" >box3</div> 
+</div>
+<br>
+
+<h4>Example27(vii): margin-bottom:auto</h4>
+<div class="flex-item-container1" >
+   <div class="flex-item2" style="margin-bottom:auto;" >box1√</div>
+   <div class="flex-item2"  >box2</div>
+   <div class="flex-item2" >box3</div> 
+</div>
+<br>
+<br>
+
+<li><strong>Perfect centering</strong></li>
+<h3>margin:auto;</h3>
+<p>Apply margin:auto; in child box. Not in parent container</p>
+<h4>Example28(i): margin:auto</h4>
+<div class="flex-item-container1" >
+   <div class="flex-item2" style="margin:auto;" >box1√</div>
+   <div class="flex-item2"  >box2</div>
+   <div class="flex-item2" >box3</div> 
+</div>
+<br>
+
+<h4>Example28(i): margin:auto</h4>
+<div class="flex-item-container1" >
+   <div class="flex-item2" style="margin:auto;" >box1√</div>
+</div>
+<br>
+
+
+
+
+
+
+<hr>
+<h2>align-self</h2>
+<h3>-webkit-align-self:flex-start;<br>align-self:flex-start;<br>(flex-start,flex-end,center,baseline,stretch)</h3>
+<p>The align-self property of flex items overrides the flex container's align-items property for that item. It has the same possible values as the align-items property.</p>
+<p>The following example sets different align-self values to each flex item:Applied inline CSS</p><br>
+
+<h4>Example29: align-self</h4>
+<div class="flex-item-container1" >
+   <div class="flex-item2" style="-webkit-align-self:flex-start;align-self:flex-start;" >flex-start</div>
+   <div class="flex-item2" style="-webkit-align-self:flex-end;align-self:flex-end;" >flex-end</div>
+   <div class="flex-item2" style="-webkit-align-self:center;align-self:center;">center</div>
+    <div class="flex-item2" style="-webkit-align-self:baseline;align-self:baseline;">baseline</div> 
+    <div class="flex-item2" style="-webkit-align-self:stretch;align-self:stretch;">stretch</div> 
+</div>
+<br>
+
+
+
+
+
+<hr>
+<h2>flex</h2>
+<h3>-webkit-flex:2;<br>flex:2;<br>(number)</h3>
+<p>The flex property specifies the length of the flex item, relative to the rest of the flex items inside the same container.</p>
+<p>In the following example, the first flex item will consume 2/4 of the free space, and the other two flex items will consume 1/4 of the free space each:(inline CSS applied)</p>
+
+<h4>Example30:flex</h4>
+<div class="flex-item-container1" >
+   <div class="flex-item2" style="-webkit-flex:2;flex:2;" >2</div>
+   <div class="flex-item2" style="-webkit-flex:1;flex:1;" >1</div>
+   <div class="flex-item2" style="-webkit-flex:2;flex:1;">1</div>
+</div>
+
+
+
+<strong>Next:</strong><marquee>flex-flow,flex-grow,flex-shrink,flex-basis</marquee>
+
+
+</body>
+</html>

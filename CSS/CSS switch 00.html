@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+<meta name="viewport"content="width=device-width,initial-scale=1">
+<meta charset="utf-8" />
+<style type="text/css">
+/*'.switch'→the slider container*/
+.switch { 
+ position:relative;
+ display:inline-block;
+ width:60px;
+ height:34px;
+}
+/*Hide default HTML checkbox*/
+.switch input {
+ display:none;
+}
+
+/*The slider*/
+.slider {
+  position:absolute;
+  cursor:pointer;
+  top:0;
+  right:0;
+  bottom:0;
+  left:0;
+  background-color:#ccc;
+  -webkit-transition:0.4s;
+  transition:0.4s;
+}
+
+/*creating slider icon*/
+.slider:before { 
+ position:absolute;
+ content: "";
+ width:26px;
+ height:26px;
+ left:4px;
+ bottom:4px;
+ background-color:white;
+ -webkit-transition:0.4s;
+ transition:0.4s;
+}
+
+/*input:checked +.slider and input:focus + .slider is not important*/
+input:checked + .slider { 
+ background-color:#2196F3;
+}
+/*a blue color*/
+
+input:focus + .slider {
+ box-shadow:0px 0px 1px #2196F3;
+}
+
+/*moving the silder in switch*/ /* 'input:checked + .slider:before' means selecting the slider icon after the checkbox is checked/unchecked*/
+input:checked + .slider:before {
+ -webkit-transform:translateX(26px);
+ -ms-transform:translateX(26px);
+ transform:translateX(26px);
+}
+
+        /*rounded slider*/
+/*the slider container*/
+.slider.round {
+ border-radius:34px;
+}
+/*the slider*/
+.slider.round:before {
+ border-radius:50%;
+}
+
+</style>
+</head>
+<body>
+
+<!--Rectangular switch-->
+<label class="switch" >
+   <input type="checkbox">
+   <div class="slider"></div>
+</label>
+
+<!--rounded switch-->
+<label class="switch" >
+   <input type="checkbox" >
+   <div class="slider round" ></div>
+</label>
+
+
+
+
+</body>
+</html>

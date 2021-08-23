@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+<meta name="viewport"content="width=device-width,initial-scale=1">
+<meta charset="utf-8" />
+<style type="text/css">
+.ex1:before{
+ content:"I";
+}
+.ex1:after{
+ content:"Rice";
+}
+
+
+
+.ex2{
+ width:50px;
+ height:50px;}
+.ex2:before{
+/*width and height donot works. width and height will be same as .ex2{width:50px; and height:50px;}*/
+ content:"";
+ background-color:green;
+ border:1px solid blue;
+ padding:5px;
+ border-radius:16px;
+}
+.ex2:after{
+/*width and height donot works. width and height will be same as .ex2{width:50px; and height:50px;}*/
+ content:"";
+ background-color:orange;
+ border:1px solid blue;
+ padding:5px;
+ border-radius:16px;
+}
+</style>
+</head>
+<body>
+<p><strong>:before</strong> and <strong>:after</strong> is used to insert something in the same parent.
+</p>
+<hr>
+
+
+
+
+<h3>Example1</h3>
+<pre>
+<strong>CSS:</strong>
+.ex1:before{
+ content:"I";
+}
+.ex1:after{
+ content:"Rice";
+}
+<strong>HTML:</strong>
+&lt;div class="ex1" &gt;Eat&lt;/div&gt;
+</pre>
+<strong>Output:</strong>
+<div class="ex1" >Eat</div>
+<hr>
+
+
+
+
+<h3>Example2</h3>
+<pre>
+<strong>CSS:</strong>
+.ex2{
+ width:50px;
+ height:50px;}
+.ex2:before{
+/*width and height donot works. width and height will be same as .ex2{width:50px; and height:50px;}*/
+ content:"";
+ background-color:green;
+ border:1px solid blue;
+ padding:5px;
+ border-radius:16px;
+}
+.ex2:after{
+/*width and height donot works. width and height will be same as .ex2{width:50px; and height:50px;}*/
+ content:"";
+ background-color:orange;
+ border:1px solid blue;
+ padding:5px;
+ border-radius:16px;
+}
+
+<strong>HTML:</strong>
+&lt;div class="ex2" &gt;Eat&lt;/div&gt;
+</pre>
+<strong>Output:</strong>
+<div class="ex2" >Eat</div>
+
+
+
+
+</body>
+</html>
