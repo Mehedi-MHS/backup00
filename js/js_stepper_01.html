@@ -42,7 +42,11 @@
   border:4px solid #edccff;
   position:relative;
   z-index:3;
+  transition:0.3s;
+  animation:curr 1s 1;
+  
 }
+@keyframes curr{from{transform:scale(0);}}
 
 .current + .txt{
   font-weight:700;
@@ -65,7 +69,6 @@
   position:relative;
   z-index:3;
 }
-
 .container2{
   width:95%;
   height:150px;
