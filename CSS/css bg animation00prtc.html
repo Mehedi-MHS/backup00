@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+<meta name="viewport"content="width=device-width,initial-scale=1">
+<style type="text/css">
+body{
+  margin:0;
+}
+*{
+  box-sizing:border-box;
+  font-family:none;
+}
+.container{
+  width:100%;
+  height:250px;
+  border:1px solid black;
+  position:relative;/*imp*/
+  overflow:hidden;/*imp*/
+}
+.bg1{
+width:100%;
+height:100%;
+background:linear-gradient(to top right,darkBlue,orange,steelBlue,magenta,green);
+overflow:hidden;
+z-index:1;
+}
+.ball{
+  position:relative;
+  width:55px;
+  height:55px;
+  border-radius:50%;
+  background:radial-gradient(circle farthest-corner at top right, cyan,magenta);
+  z-index:1;
+  transition:0.4s;
+}
+.ball1{
+ animation:b1 5s infinite;
+ top:10%;
+ left:25%;
+}
+@keyframes b1{
+  0%{}
+  10%{transform:scale(0.1) translate3d(0,200px,0);}
+  30%{transform:translate3d(0,100px,0);}
+  
+}
+.ball2{
+ animation:b2 5s infinite;
+ animation-delay:3.5s;
+ top:30%;
+ left:10%;
+}
+@keyframes b2{
+  0%{}
+  10%{transform:scale(0.1) translate3d(200px,0,0);}
+  30%{transform:translate3d(259px,0,0);}
+}
+
+.ball3{
+ animation:b3 5s infinite;
+ animation-delay:2s;
+ left:80%;
+}
+@keyframes b3{
+  0%{}
+  10%{transform:scale(0.05) translate3d(-200px,0,0);
+  30%{transform:translate3d(200px,0,0);}}
+}
+/*end of animation*/
+.bg2{
+  width:100%;
+  height:100%;
+  position:absolute;/*imp*/
+  z-index:300;
+  top:0;/*imp*/
+  left:0;/*imp*/
+  background:rgba(255,255,255,0.7);
+  text-align:center;
+  display:-webkit-flex;
+  display:flex;
+  -webkit-flex-direction:column;
+  flex-direction:column;
+  -webkit-align-items:center;
+  align-items:center;
+}
+.bg2 input:not([type=submit]){
+  border:1px solid gold;
+  border-radius:3px;
+  font-size:1rem;
+  padding:5px;
+  background:rgba(100,50,140,0.3);
+  color:white;
+}
+.bg2 input[type=submit]{
+  padding:7px;
+  border-radius:3px;
+  border:1px solid blue;
+  color:white;
+  background:steelblue;
+}
+</style>
+</head>
+<body>
+<h1>CSS background animation</h1>
+<div class="container">
+   <div class="bg1" >
+      <div class="ball1 ball"></div>
+      <div class="ball2 ball"></div>
+      <div class="ball3 ball"></div>
+    </div>
+    <div class="bg2">
+    <h2>Login</h2>
+    <input type="text" placeholder="Enter your name here" ><br>
+    <input type="password" placeholder="Enter password" ><br>
+    <input type="submit"value="SUBMIT">
+    </div>
+ </div>
+    
+</body>
+</html>

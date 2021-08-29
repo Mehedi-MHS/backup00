@@ -1,95 +1,105 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>body preloader</title>
+<title></title>
 <meta name="viewport"content="width=device-width,initial-scale=1">
-<meta charset="UTF-8" />
+<meta charset="utf-8" />
 <style type="text/css">
-.header1{
-  max-width:100%;
-  padding:5px 7px;
-  box-shadow:0px 1px 3px black;
-  display:inline-block;
-  background:pink;
+*{
+  box-sizing:border-box;
 }
-.header2{
-  max-width:100%;
-  padding:5px 7px;
-  box-shadow:0px 1px 3px black;
-  display:inline;
-  background:pink;
-}
-.header3{
-  max-width:100%;
-  padding:5px 7px;
-  box-shadow:0px 1px 3px black;
-  display:block;
-  background:pink;
-}
-.box{
-  width:30px;
-  height:30px;
+.container1{
+  width:100%;
+  height:100px;
   display:-webkit-flex;
   display:flex;
-  -webkit-flex-wrap:wrap;
-  flex-wrap:wrap;
+  -webkit-justify-content:center;
+  justify-content:center;
 }
-.item{
-  width:13px;
-  height:13px;
-  background-color:black;
-  border:1px solid white;
-  border-radius:100%;
+.ball{
+ width:3px; /*important to remove gap between ball and line */
+ height:3px;
 }
-.logo{
-  font-size:25px;
-  font-weight:600;
-  color:rgba(23,41,255,1);
+.ball .txt{
+  display:inline;
+}
+.bl{
+  width:25px;
+  height:25px;
+  border-radius:50%;
+  background:silver;
+  margin-left:-5px;
+}
+.line{
+  width:25%;
+  height:10px;
+  background:silver;
+  margin-top:7px;
+  border-radius:5px;
+}
+.done{
+  background:green;
+}
+.current{
+  background:#b300a7;
+  border:5px solid #ffb3fa;
+  z-index:3;
+  position:relative;
+}
+
+
+
+
+.container2{
+  width:95%;
+  height:100px;
+  display:table;
+  border:2px solid green;
+  text-align:center;
 }
 </style>
 </head>
 <body>
-<h1>CSS display properties</h1>
-<div class="header1">
-   <div class="box">
-      <div class="item"></div>
-      <div class="item"></div>
-      <div class="item"></div>
-      <div class="item"></div>
-   </div>
-   <div class="logo">inline-block</div>
-</div>
+<h1>Js stepper</h1>
 
+<div class="container1">
+   <div class="ball">
+      <div class="bl ball1 current">
+      </div>
+      <div class="txt">
+        Step1
+      </div>
+   </div>
+   <div class="line line1"></div>
+   <div class="ball">
+      <div class="bl ball2"></div>
+      <div class="txt">
+         Step2
+      </div>
+   </div>
+   <div class="line line2"></div>
+   <div class="ball">
+      <div class="bl ball2"></div>
+      <div class="txt">
+         Step3
+      </div>
+   </div>
+</div>
 <br>
-<div class="header2">
-   <div class="box">
-      <div class="item"></div>
-      <div class="item"></div>
-      <div class="item"></div>
-      <div class="item"></div>
-   </div>
-   <div class="logo">inline</div>
+
+<h3>Questions</h3>
+<div class="container2">
+   <p><big>&nbsp;&raquo;</big><div class="question"></div></p>
+   <input type="text"id="ans"placeholder="Your answer here..">
 </div>
 
-
-<br>
-
-<div class="header3">
-   <div class="box">
-      <div class="item"></div>
-      <div class="item"></div>
-      <div class="item"></div>
-      <div class="item"></div>
-   </div>
-   <div class="logo">block</div>
-</div>
+<script type="text/javascript">
 
 
 
 
 
-
-
+</script>
 
 </body>
 </html>
