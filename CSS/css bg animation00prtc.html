@@ -64,9 +64,22 @@ z-index:1;
 }
 @keyframes b3{
   0%{}
-  10%{transform:scale(0.05) translate3d(-200px,0,0);
-  30%{transform:translate3d(200px,0,0);}}
+  10%{transform:scale(0.05) translate3d(-200px,0,0);}
+  30%{transform:translate3d(-200px,0,0);}
+  }
+
+
+.ball4{
+ animation:b4 10s infinite;
+ left:85%;
+ transition:0.4s;
 }
+@keyframes b4{
+  30%{transform:rotate(-360deg);left:15%;}
+  90%{left:85%;transform:rotate(360deg);}
+  
+ }
+
 /*end of animation*/
 .bg2{
   width:100%;
@@ -108,6 +121,8 @@ z-index:1;
       <div class="ball1 ball"></div>
       <div class="ball2 ball"></div>
       <div class="ball3 ball"></div>
+      <div class="ball4 ball"></div>
+      
     </div>
     <div class="bg2">
     <h2>Login</h2>
