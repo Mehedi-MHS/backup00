@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width =device-width, initial-scale=1">
+    <style type="text/css" media="all">
+    .a {
+      text-align: center;
+    }
+      button{
+        width: 150px;
+        height: 150px;
+        border-radius:50%;
+        font-size: 1.73rem;
+        font-weight: 570;
+        color: white;
+        background: rgb(22,143,147);
+        border: 5px solid rgb(146,216,233);
+        user-select: none;
+        -webkit-user-select:none;
+      }
+      #r{
+        font-size: 2.1rem;
+        color:rgb(86,203,155);
+        -webkit-text-stroke:1px  black;
+      }
+    </style>
+    <title></title>
+  </head>
+  <body>
+    <div class="a">
+     <h3 id="r">...</h3>
+     <button id="btn">Long Press</button>
+    </div>
+    <script type="text/javascript" charset="utf-8">
+      var rs=document.querySelector("#r");
+      var btn=document.querySelector("#btn");
+      var flag=false;
+      var num=0;
+      btn.addEventListener("touchstart",function(){flag=true;document.querySelector("#btn").style.background="#f92ee3";init();});
+      btn.addEventListener("touchend",function(){flag=false;document.querySelector("#btn").style.background="#0b96b9";init();});
+      function init(){
+        if(flag){
+       
+          setTimeout(function(){
+               num++;
+          rs.innerHTML=num;
+          init();
+          },500);
+        }
+      }
+      
+    </script>
+  </body>
+</html>
