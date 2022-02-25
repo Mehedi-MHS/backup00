@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <title></title>
+</head>
+<body>
+  <h1>Resized image upload by me00</h1>
+
+  <input type="file"id="f1"accept="image/*" />
+  <button id="btn">Upload</button>
+
+
+  <script type="text/javascript" charset="utf-8">
+    document.getElementById("btn").addEventListener("click", function() {
+      var file = document.getElementById("f1").files[0];
+      var filename = file.name;
+      var reader = new FileReader();
+      reader.readAsDataURL(file);
+      reader.onload = function(e) {
+        var imgdata = e.target.result;
+        var imgdata2 = imgdata.split(",")[1];//gets the real texts after the comma(data:image/png;base64,abdvxksiu-+7ksh)
+        var obj = {
+          "data":imgdata2,
+          "name":filename
+        };
+
+        var xhr = new XMLHttpRequest();
+        xhr.open("post","/upload");
+        xhr.setRequestHeader("Content-type","application/json");
+        xhr.onreadystatechange = function() {
+          if (xhr.readyState == 4 && xhr.status == 200) {
+            alert('File Uploaded');
+            alert(xhr.responseText);
+          } else {
+            alert("Not uploaded");
+          }
+        };
+        alert(obj);
+          xhr.send(JSON.stringify(obj));
+      };
+
+    });
+  </script>
+</body>
+</html>

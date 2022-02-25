@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <title>Resized Image Upload By me</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+</head>
+<body>
+  <p>
+    Client Side AJAX Image Upload By me
+  </p>
+
+  <input type="file" name="profilepic" id="mhs" accept="image/*" />
+  <button type="submit" id="btn">Submit</button>
+
+
+
+  <script type="text/javascript" charset="utf-8">
+    //FileInputElement.files[0] contains the selected file
+    document.getElementById("btn").addEventListener("click", function() {
+      var file = document.getElementById("mhs").files[0];
+      var filename = file.name;
+      alert(filename);
+      var formdata = new FormData();
+      formdata.append("profilepic", file, filename);
+
+      var xhr = new XMLHttpRequest();
+      xhr.open("POST", "http://localhost:3000/upload", true);
+      xhr.onload = function() {
+        if (xhr.status == 200) {
+          alert("√ File uploaded !");
+        } else {
+          alert("× Failed to upload file");
+        }
+      }
+      xhr.send(formdata);
+    });
+
+  </script>
+
+</body>
+</html>
