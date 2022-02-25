@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <title></title>
+
+</head>
+<body>
+
+  <h1>Ajax request checking</h1>
+  <button id="btn" type="submit">Check Ajax</button>
+  <script type="text/javascript" charset="utf-8">
+    document.getElementById("btn").addEventListener("click", function() {
+      let xhr = new XMLHttpRequest();
+      xhr.onload = function() {
+        if (xhr.status == 200) {
+          alert(xhr.responseText);
+        } else {
+          alert('!!!');
+        }
+      };
+      /*Dont Use FormData() without creating a html form
+      
+      */
+      var fdata = "name=John Doe&age=55"; //dont use space after and before &
+    
+      xhr.open("POST", "http://localhost:3000/upload", true);
+      xhr.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+      xhr.send(fdata);
+    });
+  </script>
+</body>
+</html>

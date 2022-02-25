@@ -1,0 +1,17 @@
+must use cookie-Parser module to handle cookie(s)
+
+1:SET COOKIE
+res.cookie("cookiename","cookieValue",{maxAge:600000}); //maxAge is in milliseconds to remember cookie-Parser
+
+2:GET COOKIE
+
+req.cookies; //all the cookies as JSON format object
+req.cookies["cookieName"]; //specific cookie
+req.cookies.cookieName; //same as above
+
+3: CLEAR COOKIE
+
+res.clearCookie("cookieName");
+
+
+
