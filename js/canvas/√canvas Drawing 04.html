@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+<meta name="viewport"content="width=device-width,initial-scale=1">
+<meta charset="utf-8" />
+<style type="text/css">
+canvas{
+ border:5px groove silver;
+}
+</style>
+</head>
+<body>
+<button onclick="red()">red</button>
+<button onclick="green()">green</button>
+<button onclick="clr()">Clear</button>
+<input type="color"oninput="color(this)">
+<canvas width="310"height="300"></canvas>
+<script type="text/javascript">
+ var canvas=document.querySelector("canvas");
+ var ctx=canvas.getContext("2d");
+  window.addEventListener("load",function(){
+   draw();
+});
+
+function draw(){
+   var start=function(e){
+      ctx.beginPath();
+      var px=e.changedTouches[0].pageX;
+      var py=e.changedTouches[0].pageY-canvas.offsetTop; //did substraction to keep the pointer in place
+      ctx.moveTo(px,py);
+   };
+   var move=function(e){
+      e.preventDefault();
+      var px=e.changedTouches[0].pageX;
+      var py=e.changedTouches[0].pageY-canvas.offsetTop;
+      ctx.lineTo(px,py);
+      ctx.stroke();
+   };
+   canvas.addEventListener("touchstart",start,false);
+   canvas.addEventListener("touchmove",move,false);
+}
+
+//adding colour
+function red(){
+  ctx.fillStyle="red";
+  ctx.fill();
+}
+function green(){
+  ctx.fillStyle="green";
+  ctx.fill();
+}
+function clr(){
+  ctx.clearRect(0,0,canvas.width,canvas.height);
+}
+function color(m){
+  ctx.fillStyle=m.value;
+  ctx.fill();
+}
+</script>
+
+
+
+</body>
+</html>

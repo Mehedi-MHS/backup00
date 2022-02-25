@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Binding ’this’ with prototype and static methods|JS class</title>
+<meta name="viewport"content="width=device-width,initial-scale=1">
+<meta charset="UTF-8" />
+<style type="text/css">
+*{
+  box-sizing:border-box;
+}
+noscript{
+  color:red;
+}
+#code{
+  width:100%;
+  background-color:black;
+  color:cyan;
+  padding:5px;
+  overflow:auto;
+  border-left:3px solid steelBlue;
+}
+small{
+  color:silver;
+}
+</style>
+</head>
+<body>
+<noscript>Please enable javascript to see the result</noscript>
+
+<pre id="code"></pre>
+
+<script type="text/javascript"id="p">
+class Animal{
+   speak(){
+      return this;
+   }
+   static eat(){
+       return this;
+   }
+}
+
+var obj=new Animal();
+console.log(obj.speak());//the animal object
+let speak=obj.speak;
+console.log(speak());//undefined
+console.log(Animal.eat());//returns the Animal class
+let eat=Animal.eat;
+console.log(eat());//undefined
+</script>
+
+
+
+<!--It will print the previous script code-->
+<script type="text/javascript">
+document.querySelector("#code").innerHTML=document.querySelector("#p").innerHTML;
+</script>
+</body>
+</html>

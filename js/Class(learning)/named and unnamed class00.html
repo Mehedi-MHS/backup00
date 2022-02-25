@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Named and unnamed class | JS</title>
+<meta name="viewport"content="width=device-width,initial-scale=1">
+<meta charset="UTF-8" />
+<style type="text/css">
+noscript{
+  color:red;
+}
+*{
+  box-sizing:border-box;
+}
+#code{
+  width:100%;
+  background-color:black;
+  color:cyan;
+  padding-left:5px;
+  overflow:auto;
+}
+</style>
+</head>
+<body>
+
+<noscript>Please enable javascript to see the result</noscript>
+<p>Named and unnamed class</p>
+<pre id="code"></pre>
+<script type="text/javascript"id="p">
+//unnamed class
+let rectangle1=class {
+    constructor(width,height){
+        this.width=width;
+        this.height=height;
+    }
+}
+alert(rectangle1.name);//rectangle1;
+
+//Named class
+let rectangle2= class myname{
+    constructor(width,height){
+        this.width=width;
+        this.height=height;
+    }
+}
+alert(rectangle2.name);//myname
+
+</script>
+
+
+
+<!--It will print the previous script code-->
+<script type="text/javascript">
+document.querySelector("#code").innerHTML=document.querySelector("#p").innerHTML;
+</script>
+</body>
+</html>

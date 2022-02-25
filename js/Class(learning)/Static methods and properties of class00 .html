@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Static methods and properties|JS class</title>
+<meta name="viewport"content="width=device-width,initial-scale=1">
+<meta charset="UTF-8" />
+<style type="text/css">
+*{
+  box-sizing:border-box;
+}
+noscript{
+  color:red;
+}
+#code{
+  width:100%;
+  background-color:black;
+  color:cyan;
+  padding:5px;
+  overflow:auto;
+  border-left:3px solid steelBlue;
+}
+small{
+  color:silver;
+}
+</style>
+</head>
+<body>
+<noscript>Please enable javascript to see the result</noscript>
+<p>Static methods and properties of class</p>
+<small>The static keyword defines a static method or property for a class. Static members (properties and methods) are called without instantiating their class and cannot be called through a class instance. Static methods are often used to create utility functions for an application, whereas static properties are useful for caches, fixed-configuration, or any other data you don't need to be replicated across instances.</small>
+<pre id="code"></pre>
+
+<script type="text/javascript"id="p">
+class Point{
+    constructor(x,y){
+        this.x=x;
+        this.y=y;
+    }
+    static displayName="Point";
+    static distance(a,b){
+       const dx=a.x-a.y;
+       const dy=b.x-b.y;
+       return Math.hypot(dx,dy);
+    }
+}
+
+const p1=new Point(5,5);
+const p2=new Point(10,10);
+alert(p1.displayName);//undefined
+alert(p1.distance);//undefined
+alert(p2.displayName);//undefined
+alert(p2.distance);//undefined
+
+alert(Point.displayName);//Point
+alert(Point.distance(p1,p2)); //0 //expected:7.xxx
+
+</script>
+
+
+
+<!--It will print the previous script code-->
+<script type="text/javascript">
+document.querySelector("#code").innerHTML=document.querySelector("#p").innerHTML;
+</script>
+</body>
+</html>

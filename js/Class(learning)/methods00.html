@@ -1,0 +1,49 @@
+<head>
+<title>JS class method</title>
+<meta name="viewport"content="width=device-width,initial-scale=1">
+<meta charset="UTF-8" />
+<style type="text/css">
+noscript{
+  color:red;
+}
+</style>
+</head>
+<body>
+<noscript>Please enable javascript to see the alert result</noscript>
+<p>Add <mark>class</mark> and <mark>constructor</mark> then add methods as mush as you need</p>
+<p style="color:red;" ><strong>Warning!!:</strong>Constructor parameters name and methods name must not same.eg:</p>
+<pre>class car{
+  constructor(name,<mark>age</mark>){
+    this.name=name;
+    this.age=age;
+  }
+  <mark>age()</mark>{
+    .........
+  }
+}
+<p style="color:silver;">//The age() method will not work.So give them different name.</p>
+</pre>
+
+<script type="text/javascript">
+class Car {
+  constructor(name,year){
+    this.name=name;
+    this.year=year;
+  }
+  age(){
+  let date=new Date();
+  return date.getFullYear()-this.year;
+  }
+}
+
+
+let car1=new Car("Honda",2001);
+alert("Car1 age is "+car1.age()+"year");
+
+
+</script>
+
+
+
+</body>
+</html>

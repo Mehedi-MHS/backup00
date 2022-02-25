@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+<meta name="viewport"content="width=device-width,initial-scale=1">
+<meta charset="UTF-8" />
+<style type="text/css">
+
+canvas{
+  background:silver;
+}
+pre{
+  overflow:auto;
+}
+</style>
+</head>
+<body>
+<h3>Getting touch points of canvas</h3>
+<p><strong>element.getBoundingClientRect()</strong>returns an object containing all the values of 'element'</p>.
+<mark>alert(canvas.getBoundingClientRect().width);//300 </mark>
+<mark>alert(canvas.getBoundingClientRect().height);//300</mark>
+<mark>alert(canvas.getBoundingClientRect().left);//8</mark>
+<mark>alert(canvas.getBoundingClientRect().top);//433.4375(from the top of the body to the top of the box</mark>
+<canvas width="300"height="300"></canvas>
+<script type="text/javascript">
+var canvas=document.querySelector("canvas");
+var ctx=canvas.getContext("2d");
+canvas.addEventListener("mousemove",function(e){
+   var cRect=canvas.getBoundingClientRect();
+   var canvasX=Math.round(e.clientX-cRect.left);//removes the extra length of X coordinate(outside part of canvas)
+   var canvasY=Math.round(e.clientY-cRect.top);
+   ctx.clearRect(0,0,canvas.width,canvas.height);
+   alert(`Clicked position is X: ${canvasX} , Y: ${canvasY}`);
+});
+
+
+
+</script>
+
+
+
+<br>
+<pre>canvas.addEventListener("mousemove",function(e){
+  alert(e.clientX)//returns the X coordinate(number) of the clicked position from the left side of body
+  alert(e.clientY)//returns the Y coordinate(number) of the clicked position from the Top(beginning)  of the body(webpage)
+  
+});
+</pre>
+
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="" content="">
+    <title></title>
+  </head>
+  <body>
+   <p>Here we will  set object members automatically by taking input from user </p>
+ <br />
+ <input type="text" name="" id="method" value=""placeholder="method name" /><br />
+ <input type="text"  id="value" value=""placeholder="Method value" />
+ <button type="button"id="btn">SET</button>
+ <br />
+ <p id="result"> </p>
+ 
+ <script type="text/javascript" charset="utf-8">
+   let btn=document.getElementById("btn"),result=document.getElementById("result");
+   let obj={};
+   btn.addEventListener("click",function(){
+     let method=document.getElementById("method").value.toLowerCase(),value=document.getElementById("value").value;
+     obj[method]=value; //main part
+     result.textContent=JSON.stringify(obj); //JSON.stringify() is just used to view the object properties. otherwise it will show only [object][object]
+   });
+ </script>
+  </body>
+</html>

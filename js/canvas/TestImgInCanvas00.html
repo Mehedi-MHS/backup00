@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+<meta name="viewport"content="width=device-width,initial-scale=1">
+</head>
+<body>
+
+<canvas width="250"height="230"></canvas><br>
+<button onclick="spu()">Speed++</button>
+<button onclick="spd()">Speed--</button>
+<button onclick="rotp()">Rotate++</button>
+<button onclick="rotm()">Rotate--</button>
+<script type="text/javascript">
+"use strict";
+var can=document.querySelector("canvas");
+var ctx=can.getContext("2d");
+var img=new Image();
+img.onload=function(){
+  requestAnimationFrame(start);
+}
+img.src="/storage/emulated/0/web assets/img/track.png";
+var x=0,y=0,frametrack=0;
+//flag variables
+var _xp=false,_xm=false,_yp=false,_ym=false;
+var speed=1,rotate=1;
+//speed
+function spu(){
+  speed++;
+}
+function spd(){
+  speed--;
+  if(speed<0){
+    speed=0;
+  }
+}
+//rotate
+function rotp(){
+  rotate++;
+  update();
+}
+function rotm(){
+  rotate--;
+  update();
+}
+function start(){
+
+//setting flag
+   if(x==0&&y==0){
+      _yp=false;
+      _xm=true;
+   }else if(x<can.width*(-2.3)&&y==0){
+     _xm=false;
+     _ym=true;
+   }else if(x<can.width*(-2.3)&&y<can.height*(-2.3)){
+     _ym=false;
+     _xp=true;
+   }else if(x==0&&y<can.height*(-2.3)){
+     _xp=false;
+     _yp=true;
+   }
+  //executing flag
+  if(_xp){
+    x+=1*speed;
+  }else if(_xm){
+    x-=1*speed;
+  }else if(_yp){
+    y+=1*speed;
+  }else if(_ym){
+    y-=1*speed;
+  }
+  
+  
+  
+  ctx.clearRect(0,0,can.width,can.height);
+  
+  if(x>0){
+    x=0;
+  }else if(y>0){
+    y=0;
+  }
+  ctx.drawImage(img,x,y,850,800);
+  
+  frametrack++;
+  if(frametrack<15){
+     requestAnimationFrame(start);
+  }
+  frametrack=0;
+}
+
+
+var update=function(){
+ctx.clearRect(0,0,can.width,can.height);
+ctx.rotate((Math.PI/180*45));
+}
+</script>
+
+
+</body>
+</html>

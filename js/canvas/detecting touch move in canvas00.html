@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+<meta name="viewport"content="width=device-width,initial-scale=1">
+<style type="text/css">
+canvas{
+  border:1px solid black;
+}
+</style>
+</head>
+<body>
+
+<canvas width="300"height="300"></canvas>
+<script type="text/javascript">
+var canvas=document.querySelector("canvas");
+var ctx=canvas.getContext("2d");
+canvas.addEventListener("touchmove",abc,false);
+  function abc(e){
+  // e.preventDefault();
+   var x=e.changedTouches[0].pageX;
+   var y=e.changedTouches[0].pageY;
+   ctx.clearRect(0,0,300,300);
+   ctx.fillText("x:"+x+" y:"+y,50,270);
+
+}
+
+
+</script>
+
+</body>
+</html>

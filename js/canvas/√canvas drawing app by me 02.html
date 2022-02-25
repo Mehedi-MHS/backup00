@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Drawing on canvas</title>
+<meta name="viewport"content="width=device-width,initial-scale=1">
+<meta charset="utf-8" />
+<style type="text/css">
+canvas{
+ border:5px groove silver;
+}
+.colours{
+  display:table;
+}
+.colours div{
+  display:inline-block;
+  padding:3px;
+  float:left;
+  color:silver;
+  border:2px groove pink;
+  font-weight:250;
+}
+input[type=color]{
+  display:none;
+  visibility:hidden;
+}
+</style>
+</head>
+<body>
+<h3>Drawing on canvas</h3>
+
+<div class="colours">
+   <div val="#ff0000"class="color">Red</div>
+   <div val="#008000"class="color">Green</div>
+   <div val="#0000ff"class="color">Blue</div>
+   <div val="#000000"class="color">Black</div>
+   <div val="#00ffff"class="color">Aqua</div>
+   <div val="#ffff00"class="color">Yellow</div>
+   <div val="#ffffff"class="color">White</div>
+   <div val="#ff00ff"class="color">Fuchsia</div>
+   <div><label for="colorpalate"><strong>More color</strong></label></div>
+</div>
+<input type="color"id="colorpalate"oninput="palate(this)">
+<br>
+
+<div class="options">
+   <button onclick="undo()">Undo</button>
+   <button onclick="clr()">Clear</button>
+   <button onclick="ne()">New path</button>
+   <a download="drawingShop.png" onclick="this.href=document.querySelector('canvas').toDataURL('Image/png')"><button>Download</button></a>
+</div><br>
+   
+<canvas width="340"height="300"></canvas>
+
+<script type="text/javascript">
+"use strict";
+//getting custom color
+document.querySelectorAll(".color").forEach(function(x){
+   x.style.background=x.getAttribute("val");
+   x.addEventListener("click",function(){
+      ctx.fillStyle=this.getAttribute("val");
+      ctx.fill();
+   })
+});
+function palate(c){
+  ctx.fillStyle=c.value;
+  ctx.fill();
+}
+
+
+///starting main operation
+var canvas=document.querySelector("canvas");
+var ctx=canvas.getContext("2d");
+var points=[];
+canvas.addEventListener("mousemove",function (e){
+   var cRect=canvas.getBoundingClientRect();
+   var pX=Math.round(e.clientX-cRect.left);
+   var pY=Math.round(e.clientY-cRect.top);
+     points.push({x:pX,y:pY});
+     draw();
+});
+
+/// Control Options
+     
+     function red(){
+       ctx.fillStyle="red";
+       ctx.fill();
+     }
+     
+     function green(){
+       ctx.fillStyle="green";
+       ctx.fill();
+     }
+     function blue(){
+       ctx.fillStyle="blue";
+       ctx.fill();
+     }
+     function undo(){
+       ctx.clearRect(0,0,canvas.width,canvas.height);
+       points.pop();
+       draw();
+     }
+     function clr(){
+        //removing all elements from array
+        points.length=0;
+        ctx.clearRect(0,0,canvas.width,canvas.height);
+        draw();
+     }
+     
+     function ne(){
+       points.length=0;
+      }
+   
+ctx.fillStyle="white";
+ctx.fillRect(0,0,canvas.width,canvas.height);
+ctx.fill();
+
+
+function draw(){ 
+      ctx.beginPath();
+      ctx.moveTo(points[0].x,points[0].y);
+     for (var i=0;i<points.length;i++){
+       ctx.lineTo(points[i].x,points[i].y);
+     }
+    ctx.strokeStyle="grey";
+   ctx.stroke();
+   
+}
+     
+     
+     
+     
+  
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Getter-A class method |JS</title>
+<meta name="viewport"content="width=device-width,initial-scale=1">
+<meta charset="UTF-8" />
+<style type="text/css">
+*{
+  box-sizing:border-box;
+}
+noscript{
+  color:red;
+}
+#code{
+  width:100%;
+  background-color:black;
+  color:cyan;
+  padding-left:5px;
+  overflow:auto;
+  border-left:3px solid green;
+}
+</style>
+</head>
+<body>
+<noscript>Please enable javascript to see the result</noscript>
+<p>Getter- A class method ( getter and setter)</p>
+<pre id="code"></pre>
+
+<script type="text/javascript"id="p">
+class rectangle{
+    constructor(width,height){
+        this.width=width;
+        this.height=height;
+    }
+    //Getter
+    get area(){
+        return this.calcArea();
+    }
+    //Method
+    calcArea(){
+        return this.width*this.height;
+    }
+    
+}
+
+const square= new rectangle(10,10);
+alert(square.area);//100
+
+</script>
+
+
+
+<!--It will print the previous script code-->
+<script type="text/javascript">
+document.querySelector("#code").innerHTML=document.querySelector("#p").innerHTML;
+</script>
+</body>
+</html>

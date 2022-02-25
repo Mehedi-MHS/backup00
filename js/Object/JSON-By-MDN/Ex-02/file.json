@@ -1,0 +1,19 @@
+{
+  "header":"<h1>ARTICLES BY JSON</h1>",
+  "articles":[{
+    "id":"01",
+    "title":"Article 01",
+    "content":"This is article 01. Lorem ipsum dolor sit amet............"
+  },
+    {
+      "id":"02",
+      "title":"Article 02",
+      "content":"This is article 02. Consequous dolor sit amet. Lorem bangladesh"
+    },
+    {
+      "id":"03",
+      "title":"Article 03",
+      "content":"This is article 03. Consequous dolor sit amet. Lorem bangladesh"
+    }]
+
+}

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+<meta name="viewport"content="width=device-width,initial-scale=1">
+<meta charset="UTF-8" />
+<style type="text/css">
+
+</style>
+</head>
+<body>
+<h3>Adding picture in canvas with specific width and height</h3>
+<strong>context.drawImage(img,x,y,width,height)</strong>
+<canvas width="250"height="200"></canvas>
+
+<script type="text/javascript">
+var canvas=document.querySelector("canvas");
+var ctx=canvas.getContext("2d");
+canvas.style.background="silver";
+var img=new Image();
+img.src="/storage/emulated/0/web assets/img/blog-recent-4.jpg";
+img.addEventListener("load",function(){
+ ctx.drawImage(img,50,50,150,100);
+
+});
+
+
+
+</script>
+
+</body>
+</html>

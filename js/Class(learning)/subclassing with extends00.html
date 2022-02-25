@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title> Subclassing with extends</title>
+<meta name="viewport"content="width=device-width,initial-scale=1">
+<meta charset="UTF-8" />
+<style type="text/css">
+*{
+  box-sizing:border-box;
+}
+noscript{
+  color:red;
+}
+#code,#code2{
+  width:100%;
+  background-color:black;
+  color:cyan;
+  padding:5px;
+  overflow:auto;
+  border-left:3px solid steelBlue;
+}
+small{
+  color:silver;
+}
+</style>
+</head>
+<body>
+<noscript>Please enable javascript to see the result</noscript>
+
+<h3>Subclassing with extends</h3>
+<h4>Using Class methods</h4>
+<p>There is a constructor present in the subclass.So it needs to call super() before using "this".</p>
+<pre id="code"></pre>
+<script type="text/javascript"id="p">
+class Animal{
+  constructor(name){
+     this.name=name;
+  }
+  speak(){
+     console.log(`${this.name} makes a noise`);
+  }
+}
+
+class Dog extends Animal{
+  constructor(name){
+     super(name); //call the super class constructor and pass  in the name parameter
+  }
+  speak(){
+     console.log(`${this.name} barks`);
+  }
+}
+
+let d=new Dog("tiger");
+d.speak();//tiger barks
+</script>
+
+<!--It will print the previous script code-->
+<script type="text/javascript">
+document.querySelector("#code").innerHTML=document.querySelector("#p").innerHTML;
+</script>
+
+<h3>Traditional function based classes</h3>
+<pre id="code2"></pre>
+<script type="text/javascript"id="p2">
+function Animal2(name){
+   this.name=name;
+}
+Animal2.prototype.speak=function(){
+   console.log(`${this.name} makes a noise`);
+}
+class Dog2 extends Animal2{
+   speak(){
+      console.log(`${this.name} barks again`);
+   }
+}
+
+let d2=new Dog2("Tiger2");//Tiger2 barks again
+d2.speak();
+</script>
+
+<!--It will print the previous script code-->
+<script type="text/javascript">
+document.querySelector("#code2").innerHTML=document.querySelector("#p2").innerHTML;
+</script>
+
+
+
+</body>
+</html>

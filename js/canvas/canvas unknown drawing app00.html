@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Drawing on canvas</title>
+<meta name="viewport"content="width=device-width,initial-scale=1">
+<meta charset="UTF-8" />
+<style type="text/css">
+canvas{
+ background:silver;
+}
+</style>
+</head>
+<body>
+<h3>Drawing on canvas</h3>
+<div class="options">
+   <button onclick="red()">Red</button>
+   <button onclick="green()">Green</button>
+   <button onclick="blue()">Blue</button>
+   <button onclick="undo()">Undo</button>
+   <button onclick="clr()">Clear</button>
+</div><br>
+   
+<canvas width="340"height="300"></canvas>
+
+<script type="text/javascript">
+var canvas=document.querySelector("canvas");
+var ctx=canvas.getContext("2d");
+var points=[];
+
+canvas.addEventListener("mousemove",function abc(e){
+   var cRect=canvas.getBoundingClientRect();
+   var pX=Math.round(e.clientX-cRect.left);
+   var pY=Math.round(e.clientY-cRect.top);
+     points.push({x:pX,y:pY});
+     
+     draw();
+});
+
+
+function draw(){
+   
+   ctx.beginPath();
+   
+     for (var i=0;i<points.length;i++){
+       ctx.moveTo(points[(points.length>1)?points.length-2:0].x,points[(points.length>1)?points.length-2:0].y);
+       ctx.lineTo(points[i].x,points[i].y);
+     }
+   ctx.stroke();
+
+
+}
+     
+     
+     
+     
+     
+     
+     
+     
+     function green(){
+     ctx.fillStyle="green";
+     ctx.fill();
+     }
+     function blue(){
+     ctx.fillStyle="blue";
+     ctx.fill();
+     }
+     
+
+
+</script>
+
+</body>
+</html>

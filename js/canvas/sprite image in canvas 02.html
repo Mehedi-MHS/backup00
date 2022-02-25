@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+<meta name="viewport"content="width=device-width,initial-scale=1">
+<style type="text/css">
+canvas{
+  border:1px solid black;
+}
+</style>
+</head>
+<body>
+<h3>sprite image in canvas(slow down)</h3>
+<code>1:ctx.drawImage(img,img_place_in_canvas_X,img_place_in_canvas_Y,img_width_in_canvas,img_height_in_canvas);</code>
+<code>2:ctx.drawImage(img,sprite_img_top_left_X,sprite_img_top_left_Y,sprite_img_width,sprite_img_height,img_place_in_canvas_X,img_place_in_canvas_Y,img_width_in_canvas,img_height_in_canvas);</code>
+<canvas width="300"height="300">
+<script type="text/javascript">
+var canvas=document.querySelector("canvas");
+var ctx=canvas.getContext("2d");
+var img=new Image();
+var width=16,height=18,scaleX=2*width,scaleY=2*height,animationTrack=0,sprite=0;
+
+img.src="/storage/emulated/0/web assets/img/Green-Cap-Character-16x18.png";
+img.onload=function(){
+  init();
+}
+//custom function
+function draw(spriteX,spriteY,canvasX,canvasY){
+  ctx.drawImage(img,spriteX,spriteY,width,height,canvasX,canvasY,scaleX,scaleY);
+}
+
+function animate(){
+   animationTrack++;
+   if(animationTrack<15){ //slow down animation
+       return window.requestAnimationFrame(animate);
+     }
+       ++sprite;
+       if(sprite>2){
+       sprite=0;
+       }
+       ctx.clearRect(0,0,canvas.width,canvas.height);
+         draw(sprite*width,0,0,0);
+         animationTrack=0;
+      window.requestAnimationFrame(animate);
+      
+   }
+   
+
+function init(){
+ window.requestAnimationFrame(animate);
+}
+
+
+
+</script>
+</body>
+</html>

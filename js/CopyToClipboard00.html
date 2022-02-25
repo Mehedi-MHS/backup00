@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="" content="">
+    <title></title>
+  </head>
+  <body>
+    <p>copy to clipboard using <strong>navigator.clipboard.writeText(txt)</strong></p>
+    <input type="text" name="" id="txt" value="" /><button type="submit"id="btn">Copy to clipboard</button>
+   <script type="text/javascript" charset="utf-8">
+     document.getElementById("btn").addEventListener("click",function(){
+       navigator.clipboard.writeText(document.getElementById("txt").value);
+     });
+   </script>
+  </body>
+</html>

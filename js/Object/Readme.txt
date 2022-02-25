@@ -1,0 +1,1 @@
+If you only need a single instance of an object, then you are probably better off just using an object literal, and you certainly don't need inheritance.

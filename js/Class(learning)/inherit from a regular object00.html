@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title> Alternative of extends in function</title>
+<meta name="viewport"content="width=device-width,initial-scale=1">
+<meta charset="UTF-8" />
+<style type="text/css">
+*{
+  box-sizing:border-box;
+}
+noscript{
+  color:red;
+}
+#code{
+  width:100%;
+  background-color:black;
+  color:cyan;
+  padding:5px;
+  overflow:auto;
+  border-left:3px solid steelBlue;
+}
+small{
+  color:silver;
+}
+</style>
+</head>
+<body>
+<noscript>Please enable javascript to see the result</noscript>
+<h1>Alternative of extends of function</h1>
+<strong>Note:</strong> Note that classes cannot extend regular (non-constructible) objects. If you want to inherit from a regular object, you can instead use <mark>Object.setPrototypeOf():</mark>
+<strong>It is alternative of <mark>extends</mark></strong>
+
+<pre id="code"></pre>
+<script type="text/javascript"id="p">
+const Animal={
+  speak(){
+     console.log(`${this.name} makes a noise`);
+  }
+};
+
+class dog{
+  constructor(name){
+     this.name=name;
+  }
+}
+// If you do not do this you will get a TypeError when you invoke
+Object.setPrototypeOf(dog.prototype,Animal);
+
+let d=new dog("Tiger");
+d.speak(); //Tiger makes a noise
+
+</script>
+
+<!--It will print the previous script code-->
+<script type="text/javascript">
+document.querySelector("#code").innerHTML=document.querySelector("#p").innerHTML;
+</script>
+</body>
+</html>

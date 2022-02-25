@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Parametered method</title>
+<meta name="viewport"content="width=device-width,initial-scale=1">
+<meta charset="UTF-8" />
+<style type="text/css">
+*{
+  box-sizing:border-box;
+}
+noscript{
+  color:red;
+}
+#code{
+  width:100%;
+  background-color:black;
+  color:cyan;
+  padding-left:5px;
+  overflow:auto;
+}
+</style>
+</head>
+<body>
+
+<noscript>Please enable javascript to see alert result</noscript>
+<p>Sending parameters to class method</p>
+<pre id="code"></pre>
+<script type="text/javascript"id="p">
+
+ class Car{
+    constructor(name,year){
+       this.name=name;
+       this.year=year;
+    }
+    age(x){ //methods with parameter
+        return x-this.year;
+    }
+ }
+
+let car1= new Car("Hybrid",2005);
+let now=new Date().getFullYear();
+
+alert("car1 is "+car1.age(now)+" years old");
+
+//car1 is 16 years old
+
+</script>
+
+
+
+<!--It will print the previous script code-->
+<script type="text/javascript">
+document.querySelector("#code").innerHTML=document.querySelector("#p").innerHTML;
+</script>
+</body>
+</html>
