@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <title></title>
+</head>
+<body>
+  <h1>Resized image upload by me00</h1>
+
+  <input type="file"id="f1"accept="image/*" />
+  <button id="btn">Upload</button>
+
+
+  <script type="text/javascript" charset="utf-8">
+    document.getElementById("btn").addEventListener("click", function() {
+      var file = document.getElementById("f1").files[0];
+      var filename = file.name;
+      var filesize = file.size;
+
+      var reader = new FileReader();
+      reader.readAsDataURL(file);
+      reader.onload = function(e) {
+        var img = new Image();
+        img.src = e.target.result;
+        img.onload = function() {
+          var canvas = document.createElement('canvas');
+          canvas.width = canvas.height = 250;
+          var ctx = canvas.getContext("2d");
+          ctx.clearRect(0, 0, canvas.width, canvas.height);
+          ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+          var base64string = canvas.toDataURL("image/png");
+          var base64image = base64string.split(",").pop();
+
+          alert(base64image);
+
+          var obj = {
+            "name": filename,
+            "mainImageSize": filesize,
+            "data": base64image
+          };
+
+          var xhr = new XMLHttpRequest();
+          xhr.open("post", "/upload");
+          xhr.setRequestHeader("Content-type", "application/json");
+          xhr.onload = function() {
+            if (xhr.status == 200) {
+              alert("File uploaded");
+              alert(xhr.responseText);
+            } else {
+              alert("Not uploaded");
+            }
+          }; //xhr.onload
+
+          xhr.send(JSON.stringify(obj));
+
+        } //img.onload
+
+
+      }; //reader.onload
+
+    }); //btn.addEventListener("click",()=> )
+  </script>
+</body>
+</html>
