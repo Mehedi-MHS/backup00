@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Trying to make fancy loader</title>
+    <style type="text/css" media="all">
+      body{
+        background: black;
+      }
+      .container{
+        width: 100%;
+        height:3px;
+        background: silver;
+        position: relative;
+        overflow: hidden;
+      }
+      .main{
+        width:25vmin;
+        height: 100%;
+        background:#173fbe;
+        border-radius: 7px;
+        animation: mh 2s infinite ease;
+        animation-fill-mode: both;
+        position: absolute;
+        transition: 0.4s;
+        border: 1px solid #20cef9;
+      }
+      @keyframes mh{
+        from{left:-20px;}to {left:105%};
+        0%{
+          margin-left:-25%;
+        }
+        15%{
+          width:30vmin;
+        }
+        25%{
+          width:35vmin;
+          background: #3179f8;
+          transition: background 0.2s;
+          
+        }
+        55%{
+          width: 20vmin;
+        }
+        
+          
+        }
+        100%{
+          left: 105%;
+      }
+      
+      h1 {
+        color: white;
+      }
+    </style>
+
+  </head>
+  <body>
+    <h1>The loader that google and twitter use</h1>
+    <div class="container">
+      <div class="main">
+      </div>
+    </div>
+    
+  </body>
+</html>

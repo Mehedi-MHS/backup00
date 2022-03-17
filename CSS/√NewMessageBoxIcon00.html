@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <title></title>
+  <meta http-equiv="viewport" content="width=device-width,initial-scale=1" />
+  <style type="text/css" media="all">
+  /*unnecessary*/
+  body{
+    display:grid;
+    place-items: center;
+  }
+  
+  /*Main content*/
+    .container {
+      width: 100px;
+      height: 70px;
+      position: relative; /*imp*/
+      padding: 15px;
+      border: 1px solid #CAD0D2;
+      border-radius: 4px;
+    }
+
+    .container:after,
+    .container:before {
+      right: 100%;
+      top: 35px;
+      border: solid transparent;
+      content: " ";
+      height: 0;
+      width: 0;
+      position: absolute;
+      pointer-events: none;
+    }
+
+    .container:after {
+      border-color: transparent;
+      border-right-color: #ffffff;
+      border-width: 8px;
+      margin-top: -8px;
+    }
+
+    .container:before {
+      border-color: transparent;
+      border-right-color: #CAD0D2;
+      border-width: 9px;
+      margin-top: -9px;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <p style="color:#CAD0D2">
+      Hello
+    </p>
+    <p>Hi</p>
+  </div>
+</body>
+</html>
